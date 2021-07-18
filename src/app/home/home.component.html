@@ -1,0 +1,56 @@
+
+    <label for="listcity">Choose a City:</label>
+    <select #selectedCity (change)='getData(selectedCity.value)' id='listcity' name='listcity'>
+        <option *ngFor="let city of listcity" [value]="city">
+          {{city}}
+        </option>    
+    </select>
+  
+    <br /> <br />
+
+<table *ngIf="listcity" style="width:100%">
+    <tr>
+      <th>Region:</th>
+      <td>{{locationholder.location.region}}</td>
+    </tr>
+    <tr>
+        <th>Country:</th>
+        <td>{{locationholder.location.country}}</td>
+      </tr>
+      <tr>
+        <th>Longitude:</th>
+        <td>{{locationholder.location.longitude}}</td>
+      </tr>
+      <tr>
+        <th>Latitude:</th>
+        <td>{{locationholder.location.latitude}}</td>
+      </tr>
+      <tr>
+        <th>Local time:</th>
+        <td>{{locationholder.location.localtime}}</td>
+      </tr>
+      <tr>
+        <th>Temperature:</th>
+        <td>{{currentholder.current.temperature}}</td>
+      </tr>
+      <tr>
+        <th>Text:</th>
+        <td>{{currentholder.current.condition.text}}</td>
+      </tr>
+      <tr>
+        <th>Icon:</th>
+        <td><img src="{{currentholder.current.condition.icon}}" alt="Italian Trulli"></td>
+      </tr>
+      <tr>
+        <th>Sunrise:</th>
+        <td>{{astronomyholder.astronomy.astro.sunrise}}</td>
+      </tr>
+      <tr>
+        <th>Sunset:</th>
+        <td>{{astronomyholder.astronomy.astro.sunset}}</td>
+      </tr>
+      <tr>
+        <th>Moonphase:</th>
+        <td>{{astronomyholder.astronomy.astro.moonphase}}</td>
+      </tr>
+  </table>
